@@ -4,7 +4,7 @@ const discordTTS = require("discord-tts");
 const log = require('node-pretty-log');
 
 const client = new discord.Client();
-client.login(secret.token);
+client.login(process.env.BOT_TOKEN);
 
 client.on("ready", () => {
     log('info', 'Slowpoke WAKEUP!!');
