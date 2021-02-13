@@ -1,5 +1,7 @@
 # Discord-tts-thai
 
+https://discord.com/oauth2/authorize?client_id=357899902941921282&scope=bot&permissions=0
+
 ## Start
 สร้างไฟล์ token.json
 ```

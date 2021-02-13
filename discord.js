@@ -1,4 +1,4 @@
-const secret = require("./token.json"); //file with your bot credentials/token/etc
+// const secret = require("./token.json"); //file with your bot credentials/token/etc
 const discord = require("discord.js");
 const discordTTS = require("discord-tts");
 const log = require('node-pretty-log');
