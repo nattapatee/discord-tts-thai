@@ -2,15 +2,17 @@
 const discord = require("discord.js");
 const discordTTS = require("discord-tts");
 const log = require('node-pretty-log');
+const ytdl = require('ytdl-core');
 
 const client = new discord.Client();
-client.login(process.env.BOT_TOKEN);
+// client.login(process.env.BOT_TOKEN);
+client.login("MzU3ODk5OTAyOTQxOTIxMjgy.WbqWQg.4boJKqzDAnwkpNcUS4zXQ15jVQg");
 
 client.on("ready", () => {
     log('info', 'Slowpoke WAKEUP!!');
 });
 
-client.on("message", msg => {
+client.on("message", async (msg) => {
     if (msg.content.includes("เปิดไมค์")) {
         const broadcast = client.voice.createBroadcast();
         var channelId = msg.member.voice.channelID;
@@ -185,5 +187,114 @@ client.on("message", msg => {
         msg.reply('มีไรไอ้อ้วน');
         return;
     }
-
 });
+
+
+
+client.on('voiceStateUpdate', async (oldMember, newMember) => {
+    let newUserChannel = newMember.channelID;
+    let oldUserChannel = oldMember.channelID;
+    // console.log(JSON.stringify({newUserChannel}))
+    // console.log(JSON.stringify({oldUserChannel}))
+
+    if(newUserChannel === "435055373326614538" && oldUserChannel == null) //don't remove ""
+    { 
+        const channel = client.channels.cache.get('435055373326614538'); // get channel
+        
+        let userInfo = newMember.member.user
+        console.log("user join:"+userInfo.id);
+        console.log("user join:"+userInfo.tag);
+
+        if(userInfo.id == "256006419147390976") {
+            // tee
+            channel.join().then(connection => {
+                const broadcast = client.voice.createBroadcast();
+                broadcast.play(ytdl("https://www.youtube.com/watch?v=VpfuAQr-BH0"), {
+                    volume: 0.05,
+                });
+                const dispatcher = connection.play(broadcast);
+                return;
+            }).catch(err => {
+                log('error', `Description: ${err}`);
+            });
+        }
+
+        if(userInfo.id == "335367276238864385") {
+            // nut
+            channel.join().then(connection => {
+                const broadcast = client.voice.createBroadcast();
+                broadcast.play(ytdl("https://www.youtube.com/watch?v=8CcP8hbZpew"), {
+                    volume: 0.05,
+                });
+                const dispatcher = connection.play(broadcast);
+                return;
+            }).catch(err => {
+                log('error', `Description: ${err}`);
+            });
+        }
+
+        if(userInfo.id == "912000633652019250") {
+            // yim
+            channel.join().then(connection => {
+                const broadcast = client.voice.createBroadcast();
+                broadcast.play(ytdl("https://youtube.com/watch?v=nUI3jwHOdmQ&feature=share"), {
+                    volume: 0.05,
+                });
+                const dispatcher = connection.play(broadcast);
+                return;
+            }).catch(err => {
+                log('error', `Description: ${err}`);
+            });
+        }
+
+        if(userInfo.id == "459973521624399872") {
+            // fierce
+            channel.join().then(connection => {
+                const broadcast = client.voice.createBroadcast();
+                broadcast.play(ytdl("https://www.youtube.com/watch?v=g6E6pukwpU0"), {
+                    volume: 0.05,
+                });
+                const dispatcher = connection.play(broadcast);
+                return;
+            }).catch(err => {
+                log('error', `Description: ${err}`);
+            });
+        }
+
+        if(userInfo.id == "340416527213789185") {
+            // ter
+            channel.join().then(connection => {
+                const broadcast = client.voice.createBroadcast();
+                broadcast.play(ytdl("https://www.youtube.com/watch?v=skJt3DLHB2A&ab_channel=Soundiffy"), {
+                    volume: 0.05,
+                });
+                const dispatcher = connection.play(broadcast);
+                return;
+            }).catch(err => {
+                log('error', `Description: ${err}`);
+            });
+        }
+
+        if(userInfo.id == "373443124544012289") {
+            // jul
+            channel.join().then(connection => {
+                const broadcast = client.voice.createBroadcast();
+                    broadcast.play(ytdl("https://www.youtube.com/watch?v=s9qpe7mITzo"), {
+
+                    volume: 0.05,
+                });
+                const dispatcher = connection.play(broadcast);
+                return;
+            }).catch(err => {
+                log('error', `Description: ${err}`);
+            });
+        }
+
+
+        return;
+    }
+    else{
+        // // User leaves a voice channel
+        // console.log("Left vc");
+    }
+ });
