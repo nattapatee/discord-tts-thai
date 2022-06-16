@@ -5,8 +5,7 @@ const log = require('node-pretty-log');
 const ytdl = require('ytdl-core');
 
 const client = new discord.Client();
-// client.login(process.env.BOT_TOKEN);
-client.login("MzU3ODk5OTAyOTQxOTIxMjgy.WbqWQg.4boJKqzDAnwkpNcUS4zXQ15jVQg");
+client.login(process.env.BOT_TOKEN);
 
 client.on("ready", () => {
     log('info', 'Slowpoke WAKEUP!!');
